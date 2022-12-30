@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurAllService = () => {
     return (
-        <div className='mt-20 grid grid-cols-3 mx-auto m-5'>
+        <div className='grid  w-11/12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 mx-auto'>
             <div className='w-[370px] h-[319px] shadow-lg shadow-zinc-200 p-6'>
                 <img className='w-[90px] mx-auto mt-4 rounded-md' src='https://demos.codezeel.com/wordpress/WP01/WP017/wp-content/uploads/2010/07/Simple-Skin-Care-Routine-Nullam-ullamcorper-Malorum.jpg' alt="" />
 

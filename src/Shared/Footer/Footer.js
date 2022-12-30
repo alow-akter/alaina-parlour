@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='mt-28 p-8 w-full'>
+        <div className='mt-28'>
             <footer className="footer  p-20 bg-[#F63E7B] text-base-content mt-10">
                 <div>
                     <img className='w-[60px] rounded-lg' src="https://image.shutterstock.com/image-photo/image-260nw-700211317.jpg" alt="" />
@@ -10,23 +11,23 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link to='/' className="link link-hover">Branding</Link>
+                    <Link to='/' className="link link-hover">Design</Link>
+                    <Link to='/' className="link link-hover">Marketing</Link>
+                    <Link to='/' className="link link-hover">Advertisement</Link>
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <Link to='/' className="link link-hover">About us</Link>
+                    <Link to='/' className="link link-hover">Contact</Link>
+                    <Link to='/' className="link link-hover">Jobs</Link>
+                    <Link to='/' className="link link-hover">Press kit</Link>
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
+                    <Link to='/' className="link link-hover">Terms of use</Link>
+                    <Link to='/' className="link link-hover">Privacy policy</Link>
+                    <Link to='/' className="link link-hover">Cookie policy</Link>
                 </div>
             </footer>
         </div>

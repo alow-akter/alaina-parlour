@@ -10,7 +10,7 @@ const Main = () => {
         <div>
             <Navber></Navber>
             <Outlet></Outlet>
-            <Footer className='w-full'></Footer>
+            <Footer></Footer>
         </div>
     );
 };

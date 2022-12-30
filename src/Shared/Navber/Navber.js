@@ -5,6 +5,7 @@ const Navber = () => {
     const menuItems = <React.Fragment>
 
         <li><Link className='font-bold' to='/'>Home</Link></li>
+        <li><Link className='font-normal' to='/appointment'>Appointment</Link></li>
         <li><Link to='/OurPortfolio'>Our Portfolio</Link></li>
         <li><Link to='/OurTeam'>Our Team</Link></li>
         <li><Link className='gap-5' to='/ContactUs'>Contact Us</Link></li>

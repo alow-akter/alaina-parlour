@@ -29,7 +29,7 @@ const ContactUs = () => {
                 <hr className='w-1/2 mx-auto mt-4' />
             </div>
             <div className='mt-10 '>
-                <form ref={form} onSubmit={sendEmail} className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow  ng-untouched ng-pristine ng-valid  bg-[#f2e8e3] mt-9">
+                <form ref={form} onSubmit={sendEmail} className="container bg-[#f8e6de] w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow  ng-untouched ng-pristine ng-valid  mt-9">
 
                     <div>
                         <label for="name" className="block mb-1 ml-1">Name</label>
