@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='mt-28'>
-            <footer className="footer  p-20 bg-[#F63E7B] text-base-content mt-10">
+            <footer className="footer p-20 bg-[#F63E7B] text-base-content sm:w-full mt-10">
                 <div>
                     <img className='w-[60px] rounded-lg' src="https://image.shutterstock.com/image-photo/image-260nw-700211317.jpg" alt="" />
                     <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>

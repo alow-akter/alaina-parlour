@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AvailableAppointments from './AvailableAppointments';
+import MakeAppointments from './MakeAppointments/MakeAppointments';
+
+
 
 const Appointment = () => {
+    const [seletedDate, setSeletedDate] = useState(new Date())
     return (
-        <div>
 
-            <div>
-                <img src="https://www.nicepng.com/png/full/292-2927058_get-beautiful-woman-clinic-png.png" alt="" />
-            </div>
+        <div>
+            <MakeAppointments seletedDate={seletedDate} setSeletedDate={setSeletedDate}></MakeAppointments>
+            <AvailableAppointments seletedDate={seletedDate} setSeletedDate={setSeletedDate}></AvailableAppointments>
         </div>
     );
 };
