@@ -1,9 +1,10 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import BookingModal from '../BookingModal/BookingModal';
+import Loading from '../Loading/Loading';
 import AppointmentOption from './MakeAppointments/AppointmentOption';
 
-const AvailableAppointments = ({ seletedDate }) => {
+const AvailableAppointments = ({ seletedDate, loading }) => {
     const [appointmentOptions, setAppointmentOptions] = useState([])
     const [treatment, setTreatment] = useState(null)
 
@@ -13,6 +14,9 @@ const AvailableAppointments = ({ seletedDate }) => {
             .then(data => setAppointmentOptions(data))
     }
         , [])
+    if (loading) {
+        <Loading></Loading>
+    }
     return (
         <section className='my-6'>
             <p className='text-center text-2xl font-semibold text-pink-600'>Available Appointments on {format(seletedDate, 'PP')}  </p>

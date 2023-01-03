@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Navber = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err))
+    }
     const menuItems = <React.Fragment>
 
         <li><Link className='font-bold' to='/'>Home</Link></li>
@@ -9,8 +17,17 @@ const Navber = () => {
         <li><Link to='/OurPortfolio'>Our Portfolio</Link></li>
         <li><Link to='/OurTeam'>Our Team</Link></li>
         <li><Link className='gap-5' to='/ContactUs'>Contact Us</Link></li>
-        <li><Link className='btn text-white w-32 h-12 rounded  font-bold bg-[#F73E7B] border-none' to='/login'>Login</Link></li>
+        {/* <li><Link className='btn text-white w-32 h-12 rounded  font-bold bg-[#F73E7B] border-none' to='/login'>Login</Link></li> */}
 
+        {
+            user?.uid ?
+                <>
+                    <li className='hover:text-[#f5445f] bold'><Link to='/deshBorad'>DeshBorad</Link></li>
+                    <li className='btn text-white w-32 h-12 rounded  font-bold bg-[#F73E7B] border-none bold'><button onClick={handleLogout}>Sing Out</button></li>
+                </>
+                : <li className='btn text-white w-32 h-12 rounded  font-bold bg-[#F73E7B] border-none'><Link to='/login'>Login</Link></li>
+
+        }
 
     </React.Fragment>
     return (

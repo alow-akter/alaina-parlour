@@ -1,23 +1,32 @@
-import React, { useState } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    // const { singIn } = useContext(AuthContext)
+    const { register, formState: { errors }, reset, handleSubmit } = useForm();
+    const { singIn, googleProviderLogin } = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
+    const [loginUserEmail, setLoginUserEmail] = useState('')
     // const [token] = useToken(loginUserEmail)
-    // const location = useLocation()
-    // const navigate = useNavigate()
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathName || '/'
+
 
     const handleLogin = data => {
 
         setLoginError('')
-            //singIn(data.email, data.password)
+        singIn(data.email, data.password)
             .then(result => {
                 const user = result.user
                 console.log(user);
-                //  setLoginUserEmail(data.email)
+                setLoginUserEmail(data.email)
+                toast.success('login success')
+                reset()
+                navigate(from, { replace: true })
 
             })
             .catch(error => {
@@ -26,6 +35,20 @@ const Login = () => {
             })
 
     }
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleSingIn = () => {
+        googleProviderLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error =>
+                console.error(error)
+            )
+    }
+
 
 
     return (
@@ -66,9 +89,9 @@ const Login = () => {
                         {loginError && <p className='text-red-500'>{loginError}</p>}
                     </div>
                 </form>
-                <p className='mt-3 text-xs'>New to Doctors Portal?<Link to="/singUp" className='mx-2 text-primary font-medium' >Create new account</Link></p>
+                <p className='mt-3 text-xs'>New to Doctors Portal?<Link to="/singup" className='mx-2 text-primary font-medium' >Create new account</Link></p>
                 <div className="divider">OR</div>
-                <button className='w-full btn btn-outline rounded-lg'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSingIn} className='w-full btn btn-outline rounded-lg'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
