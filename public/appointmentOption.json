@@ -1,6 +1,5 @@
 [
     {
-        "_id": "1",
         "name": "Anti Age Face Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -22,7 +21,6 @@
         ]
     },
     {
-        "_id": "2",
         "name": "Hair Color & Styleing",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -44,7 +42,6 @@
         ]
     },
     {
-        "_id": "3",
         "name": "Skin Care Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -66,7 +63,6 @@
         ]
     },
     {
-        "_id": "4",
         "name": "Skin Care & Beauty Best Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -88,7 +84,6 @@
         ]
     },
     {
-        "_id": "5",
         "name": "Anti-Aging Facial Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -110,7 +105,6 @@
         ]
     },
     {
-        "_id": "7",
         "name": "Natural Skin Care Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -132,7 +126,6 @@
         ]
     },
     {
-        "_id": "8",
         "name": "The Best Eleifend Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",
@@ -154,7 +147,6 @@
         ]
     },
     {
-        "_id": "9",
         "name": "Simple Skin Care Treatment",
         "slots": [
             "08.00 AM - 08.30 AM",

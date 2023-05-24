@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { Link, } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Singup = () => {
@@ -11,9 +11,9 @@ const Singup = () => {
     const { createUser, upDateUser, googleProviderLogin } = useContext(AuthContext)
     const [singupError, setSingupError] = useState('')
 
-    //const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
     //const [token] = useToken(createdUserEmail)
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handleSingup = (data) => {
         setSingupError('')
@@ -28,7 +28,7 @@ const Singup = () => {
                 }
                 upDateUser(userInfo)
                     .then(() => {
-                        //  saveUser(data.name, data.email);
+                        navigate('/')
                     })
                     .catch(err => console.error(err))
             })
